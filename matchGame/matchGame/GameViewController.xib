@@ -123,6 +123,7 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<bool key="IBUIEnabled">NO</bool>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
@@ -159,7 +160,7 @@
 						<int key="IBUITag">1</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage" id="1035218355">
+						<object class="NSCustomResource" key="IBUIImage" id="200109565">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">background.png</string>
 						</object>
@@ -174,7 +175,7 @@
 						<int key="IBUITag">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="1035218355"/>
+						<reference key="IBUIImage" ref="200109565"/>
 					</object>
 					<object class="IBUIImageView" id="638691016">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -186,7 +187,7 @@
 						<int key="IBUITag">3</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="1035218355"/>
+						<reference key="IBUIImage" ref="200109565"/>
 					</object>
 					<object class="IBUIImageView" id="448693596">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -198,7 +199,7 @@
 						<int key="IBUITag">4</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="1035218355"/>
+						<reference key="IBUIImage" ref="200109565"/>
 					</object>
 					<object class="IBUIImageView" id="439491717">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -210,7 +211,7 @@
 						<int key="IBUITag">5</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="1035218355"/>
+						<reference key="IBUIImage" ref="200109565"/>
 					</object>
 					<object class="IBUIImageView" id="657038327">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -222,7 +223,7 @@
 						<int key="IBUITag">6</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="1035218355"/>
+						<reference key="IBUIImage" ref="200109565"/>
 					</object>
 					<object class="IBUIImageView" id="211740981">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -234,7 +235,7 @@
 						<int key="IBUITag">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="1035218355"/>
+						<reference key="IBUIImage" ref="200109565"/>
 					</object>
 					<object class="IBUIImageView" id="1065022718">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -246,7 +247,7 @@
 						<int key="IBUITag">8</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="1035218355"/>
+						<reference key="IBUIImage" ref="200109565"/>
 					</object>
 					<object class="IBUIImageView" id="600514906">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -258,7 +259,7 @@
 						<int key="IBUITag">9</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="1035218355"/>
+						<reference key="IBUIImage" ref="200109565"/>
 					</object>
 					<object class="IBUIImageView" id="44282376">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -270,7 +271,7 @@
 						<int key="IBUITag">10</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="1035218355"/>
+						<reference key="IBUIImage" ref="200109565"/>
 					</object>
 					<object class="IBUIImageView" id="420839754">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -282,7 +283,7 @@
 						<int key="IBUITag">11</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="1035218355"/>
+						<reference key="IBUIImage" ref="200109565"/>
 					</object>
 					<object class="IBUIImageView" id="487212037">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -294,7 +295,7 @@
 						<int key="IBUITag">12</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="1035218355"/>
+						<reference key="IBUIImage" ref="200109565"/>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
@@ -446,6 +447,14 @@
 						<reference key="destination" ref="487212037"/>
 					</object>
 					<int key="connectionID">338</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">play</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="17609684"/>
+					</object>
+					<int key="connectionID">339</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -2183,7 +2192,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">338</int>
+			<int key="maxID">339</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

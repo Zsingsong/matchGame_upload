@@ -25,6 +25,7 @@
     int firstLastTime;
     int secondLastTime;
     int secondAnimationTime;
+    int num;
     
     
 }
@@ -43,5 +44,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *time;
 @property (weak, nonatomic) IBOutlet UITextField *score;
 - (IBAction)start:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *play;
 
 @end

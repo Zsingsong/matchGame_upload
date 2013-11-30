@@ -22,6 +22,8 @@
 		6A383A72184A0CD400905242 /* playButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A383A64184A0CD400905242 /* playButton2.png */; };
 		6A383A73184A0CD400905242 /* playButton3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A383A65184A0CD400905242 /* playButton3.png */; };
 		6A383A74184A0CD400905242 /* rank.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A383A66184A0CD400905242 /* rank.png */; };
+		6A383A78184A3FE100905242 /* OverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A383A76184A3FE100905242 /* OverViewController.m */; };
+		6A383A79184A3FE100905242 /* OverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A383A77184A3FE100905242 /* OverViewController.xib */; };
 		6A63918E1849F4C0008AC117 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A63918D1849F4C0008AC117 /* UIKit.framework */; };
 		6A6391901849F4C0008AC117 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A63918F1849F4C0008AC117 /* Foundation.framework */; };
 		6A6391921849F4C0008AC117 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6391911849F4C0008AC117 /* CoreGraphics.framework */; };
@@ -53,6 +55,9 @@
 		6A383A64184A0CD400905242 /* playButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playButton2.png; path = dd/playButton2.png; sourceTree = SOURCE_ROOT; };
 		6A383A65184A0CD400905242 /* playButton3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playButton3.png; path = dd/playButton3.png; sourceTree = SOURCE_ROOT; };
 		6A383A66184A0CD400905242 /* rank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rank.png; path = dd/rank.png; sourceTree = SOURCE_ROOT; };
+		6A383A75184A3FE100905242 /* OverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverViewController.h; sourceTree = "<group>"; };
+		6A383A76184A3FE100905242 /* OverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverViewController.m; sourceTree = "<group>"; };
+		6A383A77184A3FE100905242 /* OverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverViewController.xib; sourceTree = "<group>"; };
 		6A63918A1849F4C0008AC117 /* matchGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = matchGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A63918D1849F4C0008AC117 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6A63918F1849F4C0008AC117 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +132,9 @@
 				6A6391AC1849F506008AC117 /* MainViewController.xib */,
 				6A6391AF1849F6B2008AC117 /* GameViewController.h */,
 				6A6391B01849F6B2008AC117 /* GameViewController.m */,
+				6A383A75184A3FE100905242 /* OverViewController.h */,
+				6A383A76184A3FE100905242 /* OverViewController.m */,
+				6A383A77184A3FE100905242 /* OverViewController.xib */,
 				6A6391B11849F6B2008AC117 /* GameViewController.xib */,
 				6A6391941849F4C0008AC117 /* Supporting Files */,
 			);
@@ -232,6 +240,7 @@
 				6A383A72184A0CD400905242 /* playButton2.png in Resources */,
 				6A383A73184A0CD400905242 /* playButton3.png in Resources */,
 				6A383A74184A0CD400905242 /* rank.png in Resources */,
+				6A383A79184A3FE100905242 /* OverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +255,7 @@
 				6A63919E1849F4C0008AC117 /* AppDelegate.m in Sources */,
 				6A6391AD1849F506008AC117 /* MainViewController.m in Sources */,
 				6A6391B21849F6B2008AC117 /* GameViewController.m in Sources */,
+				6A383A78184A3FE100905242 /* OverViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

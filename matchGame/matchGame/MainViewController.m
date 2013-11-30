@@ -44,7 +44,7 @@
     //动画的开始与结束的快慢
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     //各种动画效果
-    transition.type = @"oglFlip"; //kCATransitionMoveIn, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    transition.type = @"cube"; //kCATransitionMoveIn, kCATransitionPush, kCATransitionReveal, kCATransitionFade
     //动画方向
     //transition.subtype = kCATransitionFromTop; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
     //将动画添加在视图层上
