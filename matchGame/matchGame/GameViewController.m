@@ -107,6 +107,10 @@
 //                    }
                     if (num==6) {
                         [timer invalidate];
+                        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                         [userDefaults setInteger:scores        forKey:@"scores"];
+                           [userDefaults setInteger:times        forKey:@"times"];
+                        [userDefaults synchronize]; 
                         OverViewController *over=[[OverViewController alloc] init];
                         CATransition* transition = [CATransition animation];
                         //执行时间长短

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface OverViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *time;
+@property (weak, nonatomic) IBOutlet UITextField *score;
 
 @end

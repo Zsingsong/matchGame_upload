@@ -26,6 +26,8 @@
     int secondLastTime;
     int secondAnimationTime;
     int num;
+    NSMutableArray *saveArray;
+    NSMutableDictionary *saveDictionary;
     
     
 }
