@@ -13,6 +13,9 @@
     NSMutableArray *tempArray;
     NSMutableArray *imagesArray;
     NSMutableArray *imagesOriginArray;
+    NSTimer *timer;
+    int rememberTimes;
+    BOOL state;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *image1;
 @property (weak, nonatomic) IBOutlet UIImageView *image2;
