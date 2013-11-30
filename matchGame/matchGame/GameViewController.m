@@ -23,7 +23,14 @@
         // Custom initialization
         rememberTimes=4;
         state=NO;
-        tempArray=[[NSMutableArray alloc]initWithObjects:@"1",@"1",@"2",@"2",@"3",@"3",@"4",@"4",@"5",@"5",@"6",@"6", nil ];
+        times=0;
+        scores=0;
+        isFirst=YES;
+        isSecond=YES;
+        firstLastTime=3;
+        secondLastTime=3;
+        secondAnimationTime=2;
+        tempArray=[[NSMutableArray alloc]initWithObjects:@"1",@"1",@"2",@"2",@"3",@"3",@"4",@"4",@"5",@"5",@"6",@"6", nil];
         imagesArray=[[NSMutableArray alloc] init];
         int temp;
         for (int i=0; i<12; i++) {
@@ -31,6 +38,7 @@
             [imagesArray addObject:[tempArray objectAtIndex:temp]];
             [tempArray removeObjectAtIndex:temp];
             NSLog(@"temp: %d,length: %d",temp,tempArray.count);
+            NSLog(@"imageArrat:%d",imagesArray.count);
         }
     }
     return self;
@@ -40,21 +48,107 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    imagesOriginArray=[[NSMutableArray alloc] initWithObjects:image1,image2,image3,image4,image5,image6,image7,image8,image9,image10,image11,image12, nil];
-   //定时器
+    imagesOriginArray=[[NSMutableArray alloc]initWithObjects:image1,image2,image3,image4,image5,image6,image7,image8,image9,image10,image11,image12,nil];
+      //定时器
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerHandler:) userInfo:nil repeats:YES];
     //暂停定时器
-   [timer setFireDate:[NSDate distantFuture]]; 
+   [timer setFireDate:[NSDate distantFuture]];
+ 
 }
 //定时器处理函数
 -(void)timerHandler:(NSTimer*)timer
 {
     if (rememberTimes>0) {
+        if (rememberTimes==3) {
+            [self rollAllOver];
+        }
         if (rememberTimes==1) {
             [self getAllBackgroundImages];
+            state=YES;
+            [self addAllEvent];
+        }
+    --rememberTimes;
+    }
+    else
+    {
+        if (firstImage!=nil && secondImage==nil) {
+            if (firstLastTime>0) {
+                if (firstLastTime==1) {
+                    firstImage.image=[self getBackgroundImage];
+                    [self animation:firstImage];
+                }
+                --firstLastTime;
+            }
+        }
+        else
+            if (firstImage!=nil &&secondImage!=nil) {
+                if ([[self getImageOrigin:firstImage] isEqual:[self getImageOrigin:secondImage]]) {
+                    if (secondAnimationTime>0) {
+                        if (secondAnimationTime==1) {
+                            firstImage.hidden=YES;
+                            secondImage.hidden=YES;
+                            firstImage.userInteractionEnabled=NO;
+                            secondImage.userInteractionEnabled=NO;
+                            firstImage=nil;
+                            secondImage=nil;
+                            scores+=100;
+                            score.text=[NSString stringWithFormat:@"%d",scores];
+                        }
+                        secondAnimationTime--;
+                    }
+                    
+                }
+                else
+                {  if (secondLastTime>0) {
+                    if (secondLastTime==1) {
+                        firstImage.image=[self getBackgroundImage];
+                        secondImage.image=[self getBackgroundImage];
+                        [self animation:firstImage];
+                        [self animation:secondImage];
+                       }
+                    --secondLastTime;
+                    }
+                }
+            }
+        
+        
+        
+        
+        time.text=[NSString stringWithFormat:@"%d",++times];
+    }
+    
+        
+  
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    //开启定时器
+    [timer setFireDate:[NSDate distantPast]];
+}
+//翻转正面
+-(void)rollAllOver
+{
+    NSString *path;
+    for (int i=0; i<12; i++) {
+        path = [[NSBundle mainBundle] pathForResource:[imagesArray objectAtIndex:i] ofType:@"png"];
+        NSLog(@"%@",[imagesArray objectAtIndex:i]);
+        [(UIImageView*)[imagesOriginArray objectAtIndex:i] setImage:[UIImage imageWithContentsOfFile:path]];
+         NSLog(@"imageoriginArra:%d",imagesOriginArray.count);
+        path=nil;
+        [self animation:(UIImageView*)[imagesOriginArray objectAtIndex:i]];
+    }
+}
+//翻转制定的图片
+-(void)rollImageOver:(UIImageView*)imageView
+{
+    NSString *path;
+    for (int i=0; i<12; i++) {
+        if ([[imagesOriginArray objectAtIndex:i] isEqual:imageView]) {
+            path=[[NSBundle mainBundle] pathForResource:[imagesArray objectAtIndex:i] ofType:@"png"];
+            [(UIImageView*)[imagesOriginArray objectAtIndex:i] setImage:[UIImage imageWithContentsOfFile:path]];
+            [self animation:(UIImageView*)[imagesOriginArray objectAtIndex:i]];
         }
     }
-    --rememberTimes;
 }
 //获取背景图片
 -(UIImage*)getBackgroundImage
@@ -67,6 +161,7 @@
 {
     for (int i=0; i<12; i++) {
         [(UIImageView*)[imagesOriginArray objectAtIndex:i] setImage:[self getBackgroundImage]];
+        [self animation:(UIImageView*)[imagesOriginArray objectAtIndex:i]];
     }
 }
 //获取制定图片源
@@ -80,23 +175,67 @@
     }
     return nil;
 }
-//翻转制定的图片
--(void)rollImageOver:(UIImageView*)imageView
-{
-    NSString *path;
-    for (int i=0; i<12; i++) {
-        if ([[imagesOriginArray objectAtIndex:i] isEqual:imageView]) {
-            path=[[NSBundle mainBundle] pathForResource:[imagesArray objectAtIndex:i] ofType:@"png"];
-            [(UIImageView*)[imagesOriginArray objectAtIndex:i] setImage:[UIImage imageWithContentsOfFile:path]];
-         }
-    }
-}
+
 //增加单击事件
 -(void)addTapSingleEvent:(UIImageView*)imageView
 {
     imageView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(yourHandlingCode:)];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSingleHandler:)];
     [imageView addGestureRecognizer:singleTap];
+}
+//单击处理函数
+-(void)tapSingleHandler:(UITapGestureRecognizer *)sender
+{
+    NSLog(@"danji");
+    if (isFirst) {
+        isFirst=NO;
+        firstImage=(UIImageView*)[sender view];
+        NSLog(@"%@",firstImage);
+        [self rollImageOver:firstImage];
+    }
+    else
+    if(isSecond)
+    {
+       secondImage=(UIImageView*)[sender view];
+        if ([firstImage isEqual:secondImage]) {
+            firstImage.image=[self getBackgroundImage];
+            [self animation:firstImage];
+            isFirst=YES;
+            firstImage=nil;
+            secondImage=nil;
+            firstLastTime=3;
+        }
+        else
+        {
+            isSecond=NO;
+            [self rollImageOver:secondImage];
+        }
+    }
+    else
+    {
+        firstImage.image=[self getBackgroundImage];
+        [self animation:firstImage];
+        secondImage.image=[self getBackgroundImage];
+        [self animation:secondImage];
+        isFirst=YES;
+        isSecond=YES;
+        firstImage=nil;
+        secondImage=nil;
+        firstLastTime=3;
+        secondAnimationTime=2;
+        secondLastTime=3;
+        scores-=50;
+        score.text=[NSString stringWithFormat:@"%d",scores];
+        
+    }
+    
+}
+//为所有图片添加单击事件
+-(void)addAllEvent
+{
+    for (int i=0; i<12; i++) {
+        [self addTapSingleEvent: (UIImageView*)[imagesOriginArray objectAtIndex:i]];
+    }
 }
 //增加动画
 -(void)animation:(UIView*)view
@@ -121,15 +260,15 @@
 
 - (IBAction)start:(id)sender {
     if (state) {
-        [timer setFireDate:[NSDate distantPast]];  
-        state=NO;
-        [(UIButton*)sender setTitle:@"pause" forState:nil];
+           [timer setFireDate:[NSDate distantFuture]];
+            state=NO;
+        //[(UIButton*)sender setTitle:@"pause" forState:default];
        }
     else
        {
-           [timer setFireDate:[NSDate distantFuture]];
-           state=YES;
-       [(UIButton*)sender setTitle:@"play" forState:nil];
+           [timer setFireDate:[NSDate distantPast]];  
+            state=YES;
+       //[(UIButton*)sender setTitle:@"play" forState:select];
        }
 }
 @end

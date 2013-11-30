@@ -16,6 +16,17 @@
     NSTimer *timer;
     int rememberTimes;
     BOOL state;
+    BOOL isFirst;
+    BOOL isSecond;
+    UIImageView *firstImage;
+    UIImageView *secondImage;
+    int times;
+    int scores;
+    int firstLastTime;
+    int secondLastTime;
+    int secondAnimationTime;
+    
+    
 }
 @property (weak, nonatomic) IBOutlet UIImageView *image1;
 @property (weak, nonatomic) IBOutlet UIImageView *image2;
