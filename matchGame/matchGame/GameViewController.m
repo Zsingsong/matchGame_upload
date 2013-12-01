@@ -81,7 +81,7 @@
                     firstImage.image=[self getBackgroundImage];
                     [self animation:firstImage];
                     firstImage=nil;
-                    
+                    isFirst=YES;
                 }
                 --firstLastTime;
             }
@@ -93,8 +93,8 @@
 //                        if (secondAnimationTime==1) {
                             firstImage.hidden=YES;
                             secondImage.hidden=YES;
-                            firstImage.userInteractionEnabled=NO;
-                            secondImage.userInteractionEnabled=NO;
+                            //firstImage.userInteractionEnabled=NO;
+                            //secondImage.userInteractionEnabled=NO;
                             firstImage=nil;
                             secondImage=nil;
                             isFirst=YES;
