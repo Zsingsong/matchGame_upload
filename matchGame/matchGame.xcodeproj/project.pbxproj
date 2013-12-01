@@ -24,6 +24,12 @@
 		6A383A74184A0CD400905242 /* rank.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A383A66184A0CD400905242 /* rank.png */; };
 		6A383A78184A3FE100905242 /* OverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A383A76184A3FE100905242 /* OverViewController.m */; };
 		6A383A79184A3FE100905242 /* OverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A383A77184A3FE100905242 /* OverViewController.xib */; };
+		6A383A7D184AE39E00905242 /* RankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A383A7B184AE39E00905242 /* RankViewController.m */; };
+		6A383A7E184AE39E00905242 /* RankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A383A7C184AE39E00905242 /* RankViewController.xib */; };
+		6A383A83184AE5AC00905242 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A383A7F184AE5AC00905242 /* 11.png */; };
+		6A383A84184AE5AC00905242 /* 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A383A80184AE5AC00905242 /* 22.png */; };
+		6A383A85184AE5AC00905242 /* 33.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A383A81184AE5AC00905242 /* 33.png */; };
+		6A383A86184AE5AC00905242 /* 44.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A383A82184AE5AC00905242 /* 44.png */; };
 		6A63918E1849F4C0008AC117 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A63918D1849F4C0008AC117 /* UIKit.framework */; };
 		6A6391901849F4C0008AC117 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A63918F1849F4C0008AC117 /* Foundation.framework */; };
 		6A6391921849F4C0008AC117 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6391911849F4C0008AC117 /* CoreGraphics.framework */; };
@@ -58,6 +64,13 @@
 		6A383A75184A3FE100905242 /* OverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverViewController.h; sourceTree = "<group>"; };
 		6A383A76184A3FE100905242 /* OverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverViewController.m; sourceTree = "<group>"; };
 		6A383A77184A3FE100905242 /* OverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverViewController.xib; sourceTree = "<group>"; };
+		6A383A7A184AE39E00905242 /* RankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankViewController.h; sourceTree = "<group>"; };
+		6A383A7B184AE39E00905242 /* RankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankViewController.m; sourceTree = "<group>"; };
+		6A383A7C184AE39E00905242 /* RankViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RankViewController.xib; sourceTree = "<group>"; };
+		6A383A7F184AE5AC00905242 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 11.png; path = dd/11.png; sourceTree = SOURCE_ROOT; };
+		6A383A80184AE5AC00905242 /* 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 22.png; path = dd/22.png; sourceTree = SOURCE_ROOT; };
+		6A383A81184AE5AC00905242 /* 33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 33.png; path = dd/33.png; sourceTree = SOURCE_ROOT; };
+		6A383A82184AE5AC00905242 /* 44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 44.png; path = dd/44.png; sourceTree = SOURCE_ROOT; };
 		6A63918A1849F4C0008AC117 /* matchGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = matchGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A63918D1849F4C0008AC117 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6A63918F1849F4C0008AC117 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -134,6 +147,9 @@
 				6A6391B01849F6B2008AC117 /* GameViewController.m */,
 				6A383A75184A3FE100905242 /* OverViewController.h */,
 				6A383A76184A3FE100905242 /* OverViewController.m */,
+				6A383A7A184AE39E00905242 /* RankViewController.h */,
+				6A383A7B184AE39E00905242 /* RankViewController.m */,
+				6A383A7C184AE39E00905242 /* RankViewController.xib */,
 				6A383A77184A3FE100905242 /* OverViewController.xib */,
 				6A6391B11849F6B2008AC117 /* GameViewController.xib */,
 				6A6391941849F4C0008AC117 /* Supporting Files */,
@@ -144,6 +160,10 @@
 		6A6391941849F4C0008AC117 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6A383A7F184AE5AC00905242 /* 11.png */,
+				6A383A80184AE5AC00905242 /* 22.png */,
+				6A383A81184AE5AC00905242 /* 33.png */,
+				6A383A82184AE5AC00905242 /* 44.png */,
 				6A383A59184A0CD400905242 /* 1.png */,
 				6A383A5A184A0CD400905242 /* 1pageBG.png */,
 				6A383A5B184A0CD400905242 /* 2.png */,
@@ -241,6 +261,11 @@
 				6A383A73184A0CD400905242 /* playButton3.png in Resources */,
 				6A383A74184A0CD400905242 /* rank.png in Resources */,
 				6A383A79184A3FE100905242 /* OverViewController.xib in Resources */,
+				6A383A7E184AE39E00905242 /* RankViewController.xib in Resources */,
+				6A383A83184AE5AC00905242 /* 11.png in Resources */,
+				6A383A84184AE5AC00905242 /* 22.png in Resources */,
+				6A383A85184AE5AC00905242 /* 33.png in Resources */,
+				6A383A86184AE5AC00905242 /* 44.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +281,7 @@
 				6A6391AD1849F506008AC117 /* MainViewController.m in Sources */,
 				6A6391B21849F6B2008AC117 /* GameViewController.m in Sources */,
 				6A383A78184A3FE100905242 /* OverViewController.m in Sources */,
+				6A383A7D184AE39E00905242 /* RankViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
