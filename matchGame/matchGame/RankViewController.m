@@ -7,7 +7,8 @@
 //
 
 #import "RankViewController.h"
-
+#import "GameViewController.h"
+#import <QuartzCore/QuartzCore.h>
 @interface RankViewController ()
 
 @end
@@ -35,11 +36,12 @@
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
     keysArray=[[data allKeys] sortedArrayUsingComparator:^(id obj1, id obj2){
         if ([obj1 integerValue] > [obj2 integerValue]) {
-            return (NSComparisonResult)NSOrderedDescending;
+            
+            return (NSComparisonResult)NSOrderedAscending;
         }
         
         if ([obj1 integerValue] < [obj2 integerValue]) {
-            return (NSComparisonResult)NSOrderedAscending;
+           return (NSComparisonResult)NSOrderedDescending;
         }
         return (NSComparisonResult)NSOrderedSame;
     }];
@@ -52,7 +54,8 @@
     
     
     //table
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(24, 76, 272, 343) style:UITableViewStylePlain];
+//UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(24, 76, 272, 343) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(58, 76, 204, 310) style:UITableViewStylePlain];
     // 设置tableView的数据源
     tableView.dataSource = self;
     // 设置tableView的委托
@@ -106,4 +109,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)replay:(id)sender {
+    NSLog(@"ddddddddddddd");
+    GameViewController *gameViewController=[[GameViewController alloc] init];
+    CATransition* transition = [CATransition animation];
+    //执行时间长短
+    transition.duration = 0.5;
+    //动画的开始与结束的快慢
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    //各种动画效果
+    transition.type = @"cube"; //kCATransitionMoveIn, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    //动画方向
+    //transition.subtype = kCATransitionFromTop; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+    //将动画添加在视图层上
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    //[[self navigationController] popViewControllerAnimated:NO];
+    [self.navigationController pushViewController:gameViewController animated:NO];
+
+}
 @end

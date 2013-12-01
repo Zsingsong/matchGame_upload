@@ -16,4 +16,5 @@
 }
 @property (strong,nonatomic) UITableView *myTableView;
 @property (nonatomic, retain) NSArray *dataList;  
+- (IBAction)replay:(id)sender;
 @end
