@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RankViewController : UIViewController
-
+@interface RankViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>  {
+    NSDictionary *saveDictionary;
+    NSArray *keysArray;
+    NSMutableArray *valuesArray;
+   
+}
+@property (strong,nonatomic) UITableView *myTableView;
+@property (nonatomic, retain) NSArray *dataList;  
 @end

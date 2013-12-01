@@ -43,6 +43,7 @@
 		6A6391AE1849F506008AC117 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6391AC1849F506008AC117 /* MainViewController.xib */; };
 		6A6391B21849F6B2008AC117 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6391B01849F6B2008AC117 /* GameViewController.m */; };
 		6A6391B31849F6B2008AC117 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6391B11849F6B2008AC117 /* GameViewController.xib */; };
+		6AA347AD184B8F5D00815616 /* rankList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AA347AC184B8F5D00815616 /* rankList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		6A6391AF1849F6B2008AC117 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		6A6391B01849F6B2008AC117 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		6A6391B11849F6B2008AC117 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		6AA347AC184B8F5D00815616 /* rankList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = rankList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				6A383A76184A3FE100905242 /* OverViewController.m */,
 				6A383A7A184AE39E00905242 /* RankViewController.h */,
 				6A383A7B184AE39E00905242 /* RankViewController.m */,
+				6AA347AC184B8F5D00815616 /* rankList.plist */,
 				6A383A7C184AE39E00905242 /* RankViewController.xib */,
 				6A383A77184A3FE100905242 /* OverViewController.xib */,
 				6A6391B11849F6B2008AC117 /* GameViewController.xib */,
@@ -266,6 +269,7 @@
 				6A383A84184AE5AC00905242 /* 22.png in Resources */,
 				6A383A85184AE5AC00905242 /* 33.png in Resources */,
 				6A383A86184AE5AC00905242 /* 44.png in Resources */,
+				6AA347AD184B8F5D00815616 /* rankList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

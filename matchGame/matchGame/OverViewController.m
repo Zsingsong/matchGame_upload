@@ -7,12 +7,14 @@
 //
 
 #import "OverViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
+#import "RankViewController.h"
 @interface OverViewController ()
 
 @end
 
 @implementation OverViewController
+
 @synthesize time,score;
 @synthesize comment,picture;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -20,6 +22,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -63,9 +66,17 @@
     NSLog(@"ddd");
     if ([alertView textFieldAtIndex:0]!=nil) {
         UITextField *tf=[alertView textFieldAtIndex:0];
-        NSLog(@"%@",tf.text);
+        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"rankList" ofType:@"plist"];
+        NSDictionary *oldContent = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+        // Make a mutable copy.
+        NSMutableDictionary *newContent = [oldContent  mutableCopy] ;
+        // Add new stuff.
+        [newContent setObject:tf.text forKey:[NSString stringWithFormat:@"%d",finalScore]];
+        // Now, write the plist:
+        [newContent writeToFile:plistPath atomically:YES];
+        NSLog(@"%@", oldContent);
+        NSLog(@"%@", newContent);
     }
-   
 }
 - (IBAction)upload:(id)sender {
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"name"
@@ -80,5 +91,20 @@
 }
 
 - (IBAction)rank:(id)sender {
+   RankViewController *rank=[[RankViewController alloc] init];
+    CATransition* transition = [CATransition animation];
+    //执行时间长短
+    transition.duration = 0.5;
+    //动画的开始与结束的快慢
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    //各种动画效果
+    transition.type = @"cube"; //kCATransitionMoveIn, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    //动画方向
+    //transition.subtype = kCATransitionFromTop; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+    //将动画添加在视图层上
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    //[[self navigationController] popViewControllerAnimated:NO];
+    [self.navigationController pushViewController:rank animated:NO];
+    
 }
 @end

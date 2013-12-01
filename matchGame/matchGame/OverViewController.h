@@ -11,6 +11,7 @@
 @interface OverViewController : UIViewController <UIAlertViewDelegate>
 {
     int finalScore;
+    NSDictionary *saveDictionary;
 }
 @property (weak, nonatomic) IBOutlet UITextField *time;
 @property (weak, nonatomic) IBOutlet UITextField *score;
