@@ -39,8 +39,8 @@
             temp=arc4random()%tempArray.count;
             [imagesArray addObject:[tempArray objectAtIndex:temp]];
             [tempArray removeObjectAtIndex:temp];
-            NSLog(@"temp: %d,length: %d",temp,tempArray.count);
-            NSLog(@"imageArrat:%d",imagesArray.count);
+   //         NSLog(@"temp: %d,length: %d",temp,tempArray.count);
+  //          NSLog(@"imageArrat:%d",imagesArray.count);
         }
     }
     return self;
@@ -166,9 +166,9 @@
     NSString *path;
     for (int i=0; i<12; i++) {
         path = [[NSBundle mainBundle] pathForResource:[imagesArray objectAtIndex:i] ofType:@"png"];
-        NSLog(@"%@",[imagesArray objectAtIndex:i]);
+  //      NSLog(@"%@",[imagesArray objectAtIndex:i]);
         [(UIImageView*)[imagesOriginArray objectAtIndex:i] setImage:[UIImage imageWithContentsOfFile:path]];
-         NSLog(@"imageoriginArra:%d",imagesOriginArray.count);
+ //        NSLog(@"imageoriginArra:%d",imagesOriginArray.count);
         path=nil;
         [self animation:(UIImageView*)[imagesOriginArray objectAtIndex:i]];
     }
@@ -221,11 +221,10 @@
 //单击处理函数
 -(void)tapSingleHandler:(UITapGestureRecognizer *)sender
 {
-    NSLog(@"danji");
+   // NSLog(@"danji");
     if (isFirst) {
         isFirst=NO;
         firstImage=(UIImageView*)[sender view];
-        NSLog(@"%@",firstImage);
         [self rollImageOver:firstImage];
     }
     else

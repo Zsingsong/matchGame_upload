@@ -63,7 +63,7 @@
 -(void)alertView : (UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     //得到输入框
-    NSLog(@"ddd");
+ //   NSLog(@"ddd");
     if ([alertView textFieldAtIndex:0]!=nil) {
         UITextField *tf=[alertView textFieldAtIndex:0];
         NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"rankList" ofType:@"plist"];
@@ -74,8 +74,8 @@
         [newContent setObject:tf.text forKey:[NSString stringWithFormat:@"%d",finalScore]];
         // Now, write the plist:
         [newContent writeToFile:plistPath atomically:YES];
-        NSLog(@"%@", oldContent);
-        NSLog(@"%@", newContent);
+ //       NSLog(@"%@", oldContent);
+ //       NSLog(@"%@", newContent);
     }
 }
 - (IBAction)upload:(id)sender {
