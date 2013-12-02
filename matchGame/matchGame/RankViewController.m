@@ -14,7 +14,7 @@
 @end
 
 @implementation RankViewController
-@synthesize myTableView,dataList;
+@synthesize myTableView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,8 +29,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSArray *list = [NSArray arrayWithObjects:@"武汉",@"上海",@"北京",@"深圳",@"广州",@"重庆",@"香港",@"台海",@"天津", nil];
-    self.dataList = list;
 
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"rankList" ofType:@"plist"];
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
@@ -46,16 +44,11 @@
         return (NSComparisonResult)NSOrderedSame;
     }];
     saveDictionary=[NSDictionary dictionaryWithDictionary:data];
-    for (int i=0; i<keysArray.count; i++) {
-        NSLog(@"%@", [keysArray objectAtIndex:i]);
-    }
-    NSLog(@"%@", data);//直接打印数据。
-    
-    
+
     
     //table
-//UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(24, 76, 272, 343) style:UITableViewStylePlain];
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(58, 76, 204, 310) style:UITableViewStylePlain];
+   //UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(24, 76, 272, 343) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(58, 76, 204, 280) style:UITableViewStylePlain];
     // 设置tableView的数据源
     tableView.dataSource = self;
     // 设置tableView的委托
@@ -69,18 +62,6 @@
    [self.view addSubview:myTableView];
 }
 
--(void)sortArray:(NSArray*)array
-{
-    NSMutableArray *temp=[[NSMutableArray alloc] init];
-    for (NSString *key in array) {
-       [temp addObject:[NSNumber numberWithInteger:[key integerValue]]];
-    }
-    [temp sortedArrayUsingSelector:@selector(compare:)];
-    array=[NSArray arrayWithArray:temp];
-    for (int i=0; i<array.count; i++) {
-        NSLog(@"~~~~~~~%@", [array objectAtIndex:i]);
-    }
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -100,7 +81,6 @@
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-  //  return dataList.count;
     return keysArray.count;
 }
 - (void)didReceiveMemoryWarning
@@ -110,7 +90,6 @@
 }
 
 - (IBAction)replay:(id)sender {
-    NSLog(@"ddddddddddddd");
     GameViewController *gameViewController=[[GameViewController alloc] init];
     CATransition* transition = [CATransition animation];
     //执行时间长短
@@ -126,5 +105,21 @@
     //[[self navigationController] popViewControllerAnimated:NO];
     [self.navigationController pushViewController:gameViewController animated:NO];
 
+}
+
+- (IBAction)exit:(id)sender {
+    [UIView beginAnimations:@"exitApplication" context:nil];
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:[UIApplication sharedApplication].keyWindow cache:NO];
+    [UIView setAnimationDidStopSelector:@selector(animationFinished:finished:context:)];
+    [UIApplication sharedApplication].keyWindow.bounds = CGRectMake(0, 0, 0, 0);
+    [UIView commitAnimations];
+}
+
+- (void)animationFinished:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
+    if ([animationID compare:@"exitApplication"] == 0) {
+        exit(0);
+    }
 }
 @end
